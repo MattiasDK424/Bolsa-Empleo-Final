@@ -247,12 +247,19 @@ function AppRouter() {
   return (
       <main className="app-shell">
         <header className="topbar">
-          <Link to={routePaths.home} className="brand">
-            <span className="brand-mark">BE</span>
-            <span>
-            <strong>Bolsa de Empleo</strong>
-          </span>
-          </Link>
+            <Link to={routePaths.home} className="brand">
+                <span className="brand-mark">BE</span>
+
+                <span className="brand-copy">
+    <strong>Bolsa de Empleo</strong>
+
+                    {user ? (
+                        <small className="brand-user">
+                            {user.nombre}
+                        </small>
+                    ) : null}
+  </span>
+            </Link>
 
           <nav className="topnav" aria-label="Navegación principal">
             {visibleNav.map((item) => (
